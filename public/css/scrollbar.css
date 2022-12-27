@@ -1,0 +1,18 @@
+/*FIREFOX*/
+*{
+    scrollbar-color: var(--scrollbar-thumb-background)  var(--scrollbar-track-background);
+}
+
+/*WEBKIT*/
+::-webkit-scrollbar{
+    background-color: var(--scrollbar-track-background);
+    width: 15px;
+}
+
+/*WEBKIT*/
+::-webkit-scrollbar-thumb{
+    background-color: var(--scrollbar-thumb-background);
+    border-radius: 100px;
+    border: 5px solid var(--scrollbar-track-background);
+    background-clip: content-box;
+}

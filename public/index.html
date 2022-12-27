@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat app</title>
+    <link rel="stylesheet" href="/css/index-theme.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="icon" href="/images/favicon.png" >
+</head>
+<body>
+
+    <main>
+
+        <form id="joining-form" action="/chat.html">
+            <h1>Join</h1>
+            
+            <label> 
+                username <br> 
+                <input type="text" name="username" placeholder="enter username" autocomplete="off" required />
+            </label>
+
+            <label> 
+                room <br> 
+                <input type="text" name="room" placeholder="enter room" autocomplete="off" required />
+            </label>
+
+            <button type="submit">Join</button>
+        </form>
+
+    </main>
+
+    <!-- theme toggling -->
+    <script type="text/javascript">
+
+        const $root = document.querySelector(':root') 
+
+        if(localStorage.getItem('chat-app-theme') === 'dark')
+            $root.classList.add('dark-theme')
+
+    </script>
+    
+</body>
+</html>

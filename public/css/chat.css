@@ -1,0 +1,484 @@
+*{
+    box-sizing: border-box;
+}
+
+
+html{
+    /*FONT*/
+    font-size: 10px;
+}
+
+
+body{
+    /*BOX MODEL*/
+    margin: 0%;
+    width: 100%;
+    
+}
+
+
+/********************************** MAIN ****************************************/
+/********************************************************************************/
+
+main{
+
+    /*BACKGROUND*/
+    background-image: var(--page-background);
+    background-size: 100% 30%, 100% 100%;
+    background-repeat: no-repeat , no-repeat;
+
+    /*FONT*/
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--page-font-color);
+    font-size: 1.78rem;
+    
+    /*BOX MODEL*/
+    padding: 2rem;
+    height: 100vh;
+
+    /*DISPLAY*/
+    display: grid;
+
+    /*GRID*/
+    gap: 0.4rem;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-areas: 
+        "h h h h c c c c c c c c"
+        "m m m m c c c c c c c c"
+        "m m m m c c c c c c c c"
+        "m m m m c c c c c c c c"
+        "m m m m c c c c c c c c"
+        "m m m m c c c c c c c c"
+        "m m m m c c c c c c c c"
+        "m m m m c c c c c c c c"
+        "m m m m c c c c c c c c"
+        "m m m m c c c c c c c c"
+        "m m m m c c c c c c c c"
+        "m m m m f f f f f f f f" ;
+
+    /*TRANSITION*/
+    transition: background 0.4s;
+}
+
+/********************************** HEADER **************************************/
+/********************************************************************************/
+
+#header{
+    /*BACKGROUND*/
+    background-color: var(--header-background);
+    
+    /*BOX MODEL*/
+    padding: 1rem;
+    box-shadow: 0rem 0rem 1rem rgb(0,0,0,0.5);
+
+    /*GRID*/
+    grid-area: h;
+    
+    /*DISPLAY*/
+    display: flex;
+
+    /*FLEX*/
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    /*TRANSITION*/
+    transition: background 0.4s;
+}
+
+#header #view-members{
+
+    /*DISPLAY*/
+    display: none;
+}
+
+#header #room-title{
+    /*FONT*/
+    color: var(--chat-uname-font-color);
+    font-size: 4rem;
+}
+
+#header #view-members:hover{
+
+    /*TRANSFORM*/
+    transform: scale(1.1);
+}
+
+#header #theme-toggler{
+
+    /*APPEARANCE*/
+    appearance: none;   /*removing default appearance*/
+
+    /*BOX MODEL*/
+    width: 6rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    
+    /*BACKGROUND*/
+    background: var(--chat-uname-font-color);
+    
+    /*POSITION*/
+    position: relative;
+
+    /*CURSOR*/
+    cursor: pointer;
+    
+    /*TRANSITION*/
+    transition: background 0.4s;
+}
+
+
+#header #theme-toggler::after{
+
+    /*CONTENT*/
+    content: '';
+
+    /*BOX MODEL*/
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    
+    /*BACKGROUND*/
+    background: var(--header-background);
+    
+    /*POSITION*/
+    position: absolute;
+    top: 0;
+    left: 0%;
+    
+    /*TRANSFORM*/
+    transform: scale(0.8);
+    
+    /*TRANSITION*/
+    transition: left 0.5s;
+}
+
+
+
+#header #theme-toggler:checked::after{
+    /*POSITION*/
+    left: 50%;
+}
+
+/****************************** ROOM-MEMBERS ************************************/
+/********************************************************************************/
+
+
+#room-members{
+    
+    /*BACKGROUND*/
+    background-color: var(--room-members-background);
+    
+    /*BOX MODEL*/
+    padding: 1.2rem;            
+    box-shadow: 0rem 0rem 1rem var(--room-members-box-shadow-color);  
+    
+    /*GRID*/
+    grid-area: m;
+
+    /*OVERFLOW*/
+    overflow-y: scroll;
+
+    /*DISPLAY*/
+    display: flex;
+
+    /*FLEX*/
+    flex-direction: column;
+    gap: 1.2rem;            
+
+    /*TRANSITION*/
+    transition: background 0.4s;
+}
+
+
+#room-members .room-member{         
+
+    /*BOX MODEL*/
+    padding: 1rem;
+    border: 0.1rem dashed var(--chat-uname-font-color);
+    border-radius: 2rem;  
+    
+}
+
+#room-members .room-member .room-member-uname{          
+
+    /*BOX MODEL*/
+    margin: 1.5rem 0rem;
+    
+    /*FONT*/
+    font-size: 2rem;
+    color: var(--chat-uname-font-color);
+}
+
+#room-members .room-member .room-member-joinedAt{       
+
+    /*BOX MODEL*/
+    margin: 1.5rem 0rem;
+    
+    /*FONT*/
+    font-size: 1.5rem;
+    color: var(--chat-time-font-color);
+    font-style: italic;
+}
+
+#room-members #hide-members{
+
+    /*DISPLAY*/
+    display: none;
+}
+
+
+#room-members #hide-members:hover{
+
+    /*TRANSFORM*/
+    transform: scale(1.1);
+
+}
+
+/****************************** CHAT-BOX ****************************************/
+/********************************************************************************/
+
+#chat-box{
+    /*BACKGROUND*/
+    background-color: var(--chat-box-background);
+
+    /*SHADOW*/
+    box-shadow: 0rem 0rem 1rem var(--chat-box-box-shadow-color);  
+
+    /*GRID*/
+    grid-area: c;
+
+    /*SPACING*/
+    padding: 1rem;
+
+    /*OVERFLOW*/
+    overflow-y: scroll;
+
+    /*DISPLAY*/
+    display: flex;
+    
+    /*FLEX*/
+    flex-direction: column;
+    gap: 1rem;
+
+    /*TRANSITION*/
+    transition: background 0.4s;
+}
+
+#chat-box .chat-self{
+    /*BOX MODEL*/
+    border-radius: 1.5rem 0rem 1.5rem 1.5rem;
+    padding: 1rem;
+
+    /*BACKGROUND*/
+    background-color: var(--chat-self-background);
+
+    /*SHADOW*/
+    box-shadow: 0.1rem 0.1rem 0rem var(--chat-self-box-shadow-color);
+
+    /*FLEX*/
+    align-self: flex-end;
+
+    /*TRANSITION*/
+    transition: background 0.4s;
+}
+
+#chat-box .chat-other{
+    /*BOX MODEL*/
+    border-radius: 0rem 1.5rem 1.5rem 1.5rem;
+    padding: 1rem;
+
+    /*BACKGROUND*/
+    background-color: var(--chat-other-background);
+
+    /*SHADOW*/
+    box-shadow: -0.1rem 0.1rem 0rem var( --chat-other-box-shadow-color);
+
+    /*FLEX*/
+    align-self: flex-start;
+
+    /*TRANSITION*/
+    transition: background 0.4s;
+}
+
+#chat-box .notif{
+
+    /*BACKGROUND*/
+    background-color: var(--notification-background);
+
+    /*FONT*/
+    font-size: 1.5rem;
+    color: var(--chat-time-font-color);
+
+    /*FLEX*/
+    align-self: center;
+}   
+
+.chat-msg{
+    /*BOX MODEL*/
+    margin: 1rem 0rem 0rem 0rem;
+}
+
+.chat-loc-msg{
+    /*BOX MODEL*/
+    margin: 1rem 0rem 0rem 0rem;
+
+    /*TEXT*/
+    text-align: center;
+}
+
+.chat-loc-msg a img:hover{
+    /*TRANSFORM*/
+    transform: scale(1.1);
+}
+
+.chat-meta{
+    /*BOX MODEL*/
+    margin: 0rem 0rem 1rem 0rem;
+}
+
+.chat-meta .chat-uname{
+    /*FONT*/
+    color: var(--chat-uname-font-color);
+    font-weight: bold;
+}
+
+.chat-meta .chat-time{
+    /*FONT*/
+    color: var(--chat-time-font-color);
+    font-size: 1.5rem;
+}
+
+/**************************** MESSAGE-FORM **************************************/
+/********************************************************************************/
+
+#message-form{
+
+    /*BACKGROUND*/
+    background-color: var(--msg-form-background);
+    
+    /*SHADOW*/
+    box-shadow: 0rem 0rem 1rem var(--msg-form-box-shadow-color);
+
+    /*BOX MODEL*/
+    padding: 1rem;
+    
+    /*GRID*/
+    grid-area: f;
+
+    /*DISPLAY*/
+    display: flex;
+    
+    /*FLEX*/
+    gap: 2rem;
+    align-items: center;
+
+    /*TRANSITION*/
+    transition: background 0.4s;
+}
+
+#message-form input[type=text]{
+
+    /*BOX MODEL*/
+    border-radius: 2.5rem;
+    border: none;
+    padding: 1rem;
+
+    /*BACKGROUND*/
+    background-color: var(--msg-form-input-background);
+
+    /*FONT*/
+    color: var(--msg-form-input-font-color);
+
+    /*FLEX*/
+    flex-grow: 1;
+    
+    /*TRANSITION*/
+    transition: background 0.4s;
+}
+
+#message-form input[type=text]:focus{
+
+    /*OUTLINE*/
+    outline: none;
+}
+
+#message-form input[type=image]:hover{
+
+    /*TRANSFORM*/
+    transform: scale(1.1);
+}
+
+
+/*************************** MEDIA-QUERY ****************************************/
+/********************************************************************************/
+
+
+@media screen and (max-width: 800px) {
+    
+ main{
+
+    /*BOX MODEL*/
+    padding: 0.5rem;
+
+    /*GRID*/
+    grid-template-areas: 
+    "h h h h h h h h h h h h"
+    "c c c c c c c c c c c c"
+    "c c c c c c c c c c c c"
+    "c c c c c c c c c c c c"
+    "c c c c c c c c c c c c"
+    "c c c c c c c c c c c c"
+    "c c c c c c c c c c c c"
+    "c c c c c c c c c c c c"
+    "c c c c c c c c c c c c"
+    "c c c c c c c c c c c c"
+    "c c c c c c c c c c c c"
+    "f f f f f f f f f f f f" ;
+
+ }   
+
+ #room-members{
+    
+    /*POSITION*/
+    position: fixed;
+    top:0;
+    left: 0;
+    visibility: hidden;
+
+    /*BOX MODEL*/
+    height: 100vh;
+    width: 100vw;
+ }
+
+ #header #view-members{
+
+    /*DISPLAY*/
+    display: inline;
+
+ }
+
+
+ #room-members .room-member{    
+  
+    /*TEXT*/
+    text-align: center;
+ }
+
+ #room-members #hide-members{
+
+    /*DISPLAY*/
+    display: block;
+
+    /*POSITION*/
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+ }
+
+
+}
+
+
+/********************************************************************************/

@@ -1,0 +1,40 @@
+
+
+:root{
+
+    --page-background: url('/images/bg-green.png') , url('/images/bg-light.png');
+
+    --page-font-color: black;
+    
+    --form-background: rgb(239,234,226);
+
+    --input-background: white;
+
+    --input-font-color: black;
+
+    --button-background: rgb(22,212,165);
+
+    --button-font-color: var(--form-background);
+    
+    --button-hover-background: rgba(22,212,165,0.8);
+}
+
+
+:root.dark-theme{
+
+    --page-background: url('/images/bg-green.png') , url('/images/bg-dark.png');
+
+    --page-font-color: white;
+    
+    --form-background: rgb(32,44,51);
+
+    --input-background: rgb(42,57,66);
+
+    --input-font-color: white;
+
+    --button-background: rgb(57,145,205);
+
+    --button-font-color: var(--form-background);
+    
+    --button-hover-background: rgb(57,145,205,0.8);
+}

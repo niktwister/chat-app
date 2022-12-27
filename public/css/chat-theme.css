@@ -1,0 +1,70 @@
+:root{
+
+    --page-background: url('../images/bg-green.png') , url('../images/bg-light.png');
+
+    --page-font-color: black;
+
+    --header-background: rgb(240,242,245);
+
+    --room-members-background: var(--header-background);
+
+    --room-members-box-shadow-color: rgba(0,0,0,0.5);
+
+    --msg-form-background: var(--header-background);
+
+    --msg-form-box-shadow-color: rgba(0,0,0,0.5);
+
+    --msg-form-input-background: white;
+
+    --msg-form-input-font-color: black;
+
+    --chat-box-background: rgb(239,234,226);
+
+    --chat-box-box-shadow-color: rgba(0,0,0,0.5);
+
+    --notification-background: rgba(0,0,0,0);
+
+    --chat-self-background: rgb(217,253,211);
+
+    --chat-self-box-shadow-color: rgba(0,0,0,0.2);
+
+    --chat-other-background: white;
+
+    --chat-other-box-shadow-color: rgba(0,0,0,0.2);
+
+    --chat-uname-font-color: rgb(22,212,165);
+
+    --chat-time-font-color: rgb(142,123,149);
+
+    --scrollbar-thumb-background:  rgb(195,193,188);
+
+    --scrollbar-track-background: rgba(0,0,0,0);
+    
+}
+
+
+:root.dark-theme{
+
+    --page-background: url('../images/bg-green.png') , url('../images/bg-dark.png');
+
+    --page-font-color: white;
+
+    --header-background: rgb(32,44,51);
+
+    --msg-form-input-background: rgb(42,57,66);
+
+    --msg-form-input-font-color: white;
+
+    --chat-box-background: rgb(11,20,26);
+
+    --chat-self-background: rgb(0,92,75);
+
+    --chat-other-background: rgb(32,44,51);
+
+    --chat-uname-font-color: rgb(57,145,205);
+
+    --chat-time-font-color: rgb(198, 194, 168);
+
+    --scrollbar-thumb-background:  rgb(50,58,63);
+
+}
